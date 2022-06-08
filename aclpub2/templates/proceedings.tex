@@ -126,12 +126,12 @@ ISBN \VAR{conference.isbn}
 %%%%%%%%%%%%
 \BLOCK{if prefaces}
 \BLOCK{for preface in prefaces}
-  \begin{center}
-   { \Large \textbf{\VAR{preface.title}}}
-  \end{center}
-  \vspace*{0.5cm}
-  \VAR{load_file(root, "prefaces", preface.file)}
-  \newpage
+  % \begin{center}
+  %  { \Large \textbf{\VAR{preface.title}}}
+  % \end{center}
+  % \vspace*{0.5cm}
+  \includepdf[pagecommand={\thispagestyle{plain}},pages=-]{\VAR{root}/prefaces/\VAR{preface.file}}
+  % \newpage
 \BLOCK{endfor}
 \BLOCK{endif}
 
